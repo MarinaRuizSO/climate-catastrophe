@@ -1,5 +1,7 @@
 # climate-catastrophe
 
+A web based game to inform people about climate change.
+
 ## Project setup
 ```
 npm install
