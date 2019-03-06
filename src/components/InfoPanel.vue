@@ -1,6 +1,7 @@
 <template>
-  <div v-on:click="$store.commit('incrementMoney')" class="info-panel">
+  <div v-on:click.self="$store.commit('decrementResource', 'popularity')" class="info-panel">
     <ScorePresenter resourceType="money"></ScorePresenter>
+    <ScorePresenter resourceType="popularity"></ScorePresenter>
   </div>
 </template>
 
@@ -17,6 +18,10 @@ export default {
 
 <style>
 .info-panel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
   grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 4;

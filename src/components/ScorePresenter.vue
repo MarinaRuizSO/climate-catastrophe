@@ -1,6 +1,6 @@
 <template>
-  <div>
-    ${{$store.state[this.resourceType]}}
+  <div v-on:click="$store.commit('incrementResource', resourceType)" class="score-presenter">
+    {{this.symbol}} {{$store.state[this.resourceType]}}
   </div>
 </template>
 
@@ -10,5 +10,23 @@ export default {
   props: {
     resourceType: String,
   },
+  data() {
+    const symbols = {
+      money: '$',
+      popularity: '<3',
+    };
+    return {
+      symbol: symbols[this.resourceType],
+    };
+  },
 };
 </script>
+
+<style>
+.score-presenter {
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+
+}
+</style>

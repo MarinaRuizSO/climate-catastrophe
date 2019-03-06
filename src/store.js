@@ -6,10 +6,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     money: 0,
+    popularity: 0,
   },
   mutations: {
-    incrementMoney(state) {
-      state.money += 1;
+    incrementResource(state, resourceType) {
+      state[resourceType] += 1;
+    },
+    decrementResource(state, resourceType) {
+      state[resourceType] -= 1;
     },
   },
   actions: {
