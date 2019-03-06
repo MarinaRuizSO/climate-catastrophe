@@ -1,12 +1,17 @@
 <template>
   <div v-on:click="$store.commit('incrementMoney')" class="info-panel">
-    {{ $store.state.money }}
+    <ScorePresenter resourceType="money"></ScorePresenter>
   </div>
 </template>
 
 <script>
+import ScorePresenter from './ScorePresenter.vue';
+
 export default {
   name: 'InfoPanel',
+  components: {
+    ScorePresenter,
+  },
 };
 </script>
 
