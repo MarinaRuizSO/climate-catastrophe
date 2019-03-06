@@ -7,30 +7,29 @@
 
 <script>
 export default {
-  data: function() {
+  data() {
     return {
-      userName: ''
-    }
+      userName: '',
+    };
   },
   computed: {
     isMarina() {
-      if (this.userName == 'Marina') {
-        return true
+      if (this.userName === 'Marina') {
+        return true;
       }
-      return false
+      return false;
     },
     changeColor() {
       if (this.isMarina) {
         return {
-          color: 'red'
+          color: 'red',
         };
       }
-      else {
-        return {
-          color: 'black'
-        };
-      }
-    }
-  }
-}
+
+      return {
+        color: 'black',
+      };
+    },
+  },
+};
 </script>

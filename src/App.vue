@@ -1,19 +1,17 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <Welcome/>
+    <link rel="stylesheet" type="text/css" href="./styles/grid.css">
+    <Grid></Grid>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import Welcome from './components/Welcome.vue';
+import Grid from './components/Grid.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Welcome
+    Grid,
   },
 };
 </script>
