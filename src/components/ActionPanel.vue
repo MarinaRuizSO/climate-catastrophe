@@ -7,6 +7,7 @@
 
 <script>
 import Action from './Action.vue';
+// eslint-disable-next-line
 import ActionList from '../javascript/actionList.js';
 
 export default {
