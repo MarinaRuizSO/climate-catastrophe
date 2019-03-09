@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <span class="action-panel" >Action panel</span>
+    <action-panel></action-panel>
     <span class="end-turn">End turn</span>
     <span class="display-box">Display box</span>
     <info-panel></info-panel>
@@ -9,11 +9,13 @@
 
 <script>
 import InfoPanel from './InfoPanel.vue';
+import ActionPanel from './ActionPanel.vue';
 
 export default {
   name: 'Grid',
   components: {
     InfoPanel,
+    ActionPanel,
   },
 };
 </script>
@@ -27,13 +29,6 @@ export default {
   grid-template-columns: 25% 25% 25% 25%;
 }
 
-.action-panel {
-  grid-column-start: 1;
-  grid-column-end: 1;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  background-color: #ff0000
-}
 
 .end-turn {
   grid-column-start: 1;
