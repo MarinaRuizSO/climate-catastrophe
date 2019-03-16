@@ -7,13 +7,15 @@ export default new Vuex.Store({
   state: {
     money: 0,
     popularity: 0,
+    sulfate: 0,
+    politicalPower: 0,
   },
   mutations: {
-    incrementResource(state, resourceType) {
-      state[resourceType] += 1;
-    },
-    decrementResource(state, resourceType) {
-      state[resourceType] -= 1;
+    changeResources(state, costs) {
+      state.money += costs.money;
+      state.popularity += costs.popularity;
+      state.sulfate += costs.sulfate;
+      state.politicalPower += costs.politicalPower;
     },
   },
   actions: {

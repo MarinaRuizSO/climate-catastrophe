@@ -1,7 +1,9 @@
 <template>
-  <div v-on:click.self="$store.commit('decrementResource', 'popularity')" class="info-panel">
+  <div class="info-panel">
     <ScorePresenter resourceType="money"></ScorePresenter>
     <ScorePresenter resourceType="popularity"></ScorePresenter>
+    <ScorePresenter resourceType="sulfate"></ScorePresenter>
+    <ScorePresenter resourceType="politicalPower"></ScorePresenter>
   </div>
 </template>
 

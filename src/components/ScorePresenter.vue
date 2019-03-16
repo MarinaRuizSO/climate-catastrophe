@@ -1,5 +1,5 @@
 <template>
-  <div v-on:click="$store.commit('incrementResource', resourceType)" class="score-presenter">
+  <div class="score-presenter">
     {{this.symbol}} {{$store.state[this.resourceType]}}
   </div>
 </template>
@@ -14,6 +14,8 @@ export default {
     const symbols = {
       money: '$',
       popularity: '<3',
+      sulfate: 'SO2',
+      politicalPower: 'PP',
     };
     return {
       symbol: symbols[this.resourceType],
