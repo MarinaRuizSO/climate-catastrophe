@@ -1,5 +1,15 @@
 <template>
- <div v-on:click="implementAction" class="action">{{name}}</div>
+ <div v-on:click="implementAction" class="action">
+   <div>
+     {{name}}
+   </div>
+   <div class="cost-group">
+     <span>$ {{costs.money}}</span>
+     <span>&lt;3 {{costs.popularity}}</span>
+     <span>SO2 {{costs.sulfate}}</span>
+     <span>PP {{costs.politicalPower}}</span>
+   </div>
+ </div>
 </template>
 
 
@@ -23,5 +33,13 @@ export default {
   background-color: white;
   width: 100%;
   height: 50px;
+}
+
+.cost-group {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 10px;
+  padding: 0 10px;
 }
 </style>
