@@ -1,7 +1,7 @@
 <template>
-  <div v-on:click="$store.commit('nextTurn')" class="end-turn">
+  <a v-on:click="$store.commit('nextTurn')" class="end-turn">
     End Turn
-  </div>
+  </a>
 </template>
 
 <style>
@@ -10,6 +10,18 @@
   grid-column-end: 1;
   grid-row-start: 4;
   grid-row-end: 5;
-  background-color: #1ac3e5
+  font-size: 30px;
+
+  margin: 0 20px 5px 20px;
+  border-top: 1px solid black;
+}
+
+.end-turn:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.end-turn:active {
+  border-bottom: 1px solid black;
 }
 </style>

@@ -29,6 +29,11 @@ export default {
   display: grid;
   grid-template-rows: 30% 30% 30% 10%;
   grid-template-columns: 25% 25% 25% 25%;
+
+  border: 2px black solid;
+  background-color: #ffff80;
+  border-radius: 10px;
+  margin: 0 10px;
 }
 
 .display-box {

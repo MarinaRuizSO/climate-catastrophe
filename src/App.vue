@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./styles/grid.css">
     <Grid></Grid>
   </div>
@@ -24,5 +25,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  font-family: 'ZCOOL XiaoWei', serif;
 }
 </style>

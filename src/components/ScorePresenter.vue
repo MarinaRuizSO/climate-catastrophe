@@ -26,9 +26,10 @@ export default {
 
 <style>
 .score-presenter {
-  padding: 15px 20px;
-  margin: 0 20px;
-  background-color: white;
+  font-size: 20px;
+  padding: 5px 20px;
+  margin: 5px 20px 10px 20px;
+  border-bottom: 1px solid black;
 
 }
 </style>

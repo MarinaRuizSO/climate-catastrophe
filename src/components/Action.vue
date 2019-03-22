@@ -1,6 +1,6 @@
 <template>
  <div v-on:click="implementAction" class="action">
-   <div>
+   <div class="action-name">
      {{name}}
    </div>
    <div class="cost-group">
@@ -30,9 +30,23 @@ export default {
 
 <style>
 .action {
-  background-color: white;
-  width: 100%;
-  height: 50px;
+  margin: 0 10px;
+  cursor: pointer;
+  margin-bottom: 2px;
+  border-top: 1px solid black;
+}
+
+.action:hover {
+  margin-bottom: 0px;
+  border-bottom: 2px solid black;
+}
+
+.action:active {
+  background-color: # f0f0f0;
+}
+
+.action-name {
+  font-size: 20px;
 }
 
 .cost-group {
