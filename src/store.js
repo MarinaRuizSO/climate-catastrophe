@@ -6,10 +6,10 @@ Vue.use(Vuex);
 import ActionList from './javascript/actionList.js';
 export default new Vuex.Store({
   state: {
-    money: 0,
-    popularity: 0,
-    sulfate: 0,
-    politicalPower: 0,
+    money: 500,
+    popularity: 10,
+    sulfate: 500,
+    politicalPower: 20,
     turnNumber: 0,
     availableActions: [
       ActionList[0],

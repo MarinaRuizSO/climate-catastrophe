@@ -4,9 +4,6 @@
     <div v-for="action in availableActions" v-bind:key="action.name">
       <Action :name="action.name" :costs="action.cost"></Action>
     </div>
-    <div v-for="action in availableActions" v-bind:key="action.name">
-      <Action :name="action.name" :costs="action.cost"></Action>
-    </div>
   </div>
 </template>
 

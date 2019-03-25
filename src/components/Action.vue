@@ -22,7 +22,26 @@ export default {
   },
   methods: {
     implementAction() {
-      this.$store.commit('changeResources', this.costs);
+      if (this.canImplementAction) {
+        this.$store.commit('changeResources', this.costs);
+      }
+    },
+  },
+  computed: {
+    canImplementAction() {
+      if (this.costs.money + this.$store.state.money < 0) {
+        return false;
+      }
+      if (this.costs.popularity + this.$store.state.popularity < 0) {
+        return false;
+      }
+      if (this.costs.sulfate + this.$store.state.sulfate < 0) {
+        return false;
+      }
+      if (this.costs.politicalPower + this.$store.state.politicalPower < 0) {
+        return false;
+      }
+      return true;
     },
   },
 };
