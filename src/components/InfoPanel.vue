@@ -28,6 +28,7 @@ export default {
   grid-column-end: 5;
   grid-row-start: 4;
   grid-row-end: 5;
-  background-color: #1ac315
+
+  border-left: 1px solid black;
 }
 </style>

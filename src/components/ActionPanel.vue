@@ -1,24 +1,27 @@
 <template>
   <div class="action-panel">
-    <h1>Action Panel</h1>
-    <Action :name="this.availableAction.name" :costs="this.availableAction.cost"></Action>
+    <h1 class="title">Actions</h1>
+    <div v-for="action in availableActions" v-bind:key="action.name">
+      <Action :name="action.name" :costs="action.cost"></Action>
+    </div>
+    <div v-for="action in availableActions" v-bind:key="action.name">
+      <Action :name="action.name" :costs="action.cost"></Action>
+    </div>
   </div>
 </template>
 
 <script>
 import Action from './Action.vue';
-// eslint-disable-next-line
-import ActionList from '../javascript/actionList.js';
 
 export default {
   name: 'ActionPanel',
   components: {
     Action,
   },
-  data() {
-    return {
-      availableAction: ActionList[0],
-    };
+  computed: {
+    availableActions() {
+      return this.$store.state.availableActions;
+    },
   },
 };
 </script>
@@ -30,7 +33,13 @@ export default {
   grid-column-end: 1;
   grid-row-start: 1;
   grid-row-end: 4;
-  background-color: #ff0000
+  background-color: #ffff80;
+
+  margin: 10px;
+}
+
+.title {
+
 }
 
 </style>
