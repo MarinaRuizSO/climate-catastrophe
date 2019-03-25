@@ -7,6 +7,8 @@ export default [
       sulfate: -50,
       politicalPower: -10,
     },
+    information: 'This is a bunch of other information',
+    id: 0,
   },
   {
     name: 'Accept bribe',
@@ -16,6 +18,8 @@ export default [
       sulfate: 50,
       politicalPower: -5,
     },
+    information: 'This is a bunch of information',
+    id: 1,
   },
 
 ];

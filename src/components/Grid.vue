@@ -2,7 +2,7 @@
   <div class="grid">
     <action-panel></action-panel>
     <end-turn></end-turn>
-    <span class="display-box">Display box</span>
+    <display-box></display-box>
     <info-panel></info-panel>
   </div>
 </template>
@@ -11,6 +11,7 @@
 import InfoPanel from './InfoPanel.vue';
 import ActionPanel from './ActionPanel.vue';
 import EndTurn from './EndTurn.vue';
+import DisplayBox from './DisplayBox.vue';
 
 export default {
   name: 'Grid',
@@ -18,6 +19,7 @@ export default {
     InfoPanel,
     ActionPanel,
     EndTurn,
+    DisplayBox,
   },
 };
 </script>
@@ -34,14 +36,6 @@ export default {
   background-color: #ffff80;
   border-radius: 10px;
   margin: 0 10px;
-}
-
-.display-box {
-  grid-column-start: 2;
-  grid-column-end: 5;
-  grid-row-start: 1;
-  grid-row-end: 4;
-  background-color: #5f23e5
 }
 
 </style>
