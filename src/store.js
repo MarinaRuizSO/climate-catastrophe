@@ -25,6 +25,8 @@ export default new Vuex.Store({
     nextTurn(state) {
       state.turnNumber += 1;
       state.availableActions = [ActionList[1]];
+      state.money += 1000;
+      state.politicalPower += 20;
     },
   },
   actions: {
