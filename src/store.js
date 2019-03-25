@@ -11,9 +11,12 @@ export default new Vuex.Store({
     sulfate: 500,
     politicalPower: 20,
     turnNumber: 0,
+    actionList: ActionList,
     availableActions: [
-      ActionList[0],
+      1,
+      2,
     ],
+    selectedAction: 1,
   },
   mutations: {
     changeResources(state, costs) {
@@ -27,6 +30,9 @@ export default new Vuex.Store({
       state.availableActions = [ActionList[1]];
       state.money += 1000;
       state.politicalPower += 20;
+    },
+    changeSelectedAction(state, i) {
+      state.selectedAction = i;
     },
   },
   actions: {

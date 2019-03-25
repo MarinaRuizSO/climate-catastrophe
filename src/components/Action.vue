@@ -1,5 +1,5 @@
 <template>
- <div v-on:click="implementAction" class="action">
+ <div v-on:click="this.displayAction" class="action">
    <div class="action-name">
      {{name}}
    </div>
@@ -19,29 +19,11 @@ export default {
   props: {
     name: String,
     costs: Object,
+    id: Number,
   },
   methods: {
-    implementAction() {
-      if (this.canImplementAction) {
-        this.$store.commit('changeResources', this.costs);
-      }
-    },
-  },
-  computed: {
-    canImplementAction() {
-      if (this.costs.money + this.$store.state.money < 0) {
-        return false;
-      }
-      if (this.costs.popularity + this.$store.state.popularity < 0) {
-        return false;
-      }
-      if (this.costs.sulfate + this.$store.state.sulfate < 0) {
-        return false;
-      }
-      if (this.costs.politicalPower + this.$store.state.politicalPower < 0) {
-        return false;
-      }
-      return true;
+    displayAction() {
+      this.$store.commit('changeSelectedAction', this.id);
     },
   },
 };

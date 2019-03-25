@@ -1,8 +1,8 @@
 <template>
   <div class="action-panel">
     <h1 class="title">Actions</h1>
-    <div v-for="action in availableActions" v-bind:key="action.name">
-      <Action :name="action.name" :costs="action.cost"></Action>
+    <div v-for="action in availableActions" v-bind:key="action.id">
+      <Action :name="action.name" :costs="action.cost" :id="action.id"></Action>
     </div>
   </div>
 </template>
@@ -17,7 +17,13 @@ export default {
   },
   computed: {
     availableActions() {
-      return this.$store.state.availableActions;
+      const actions = [];
+
+      // eslint-disable-next-line
+      for (const i in this.$store.state.availableActions) {
+        actions.push(this.$store.state.actionList[i]);
+      }
+      return actions;
     },
   },
 };
