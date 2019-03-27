@@ -17,6 +17,7 @@ export default new Vuex.Store({
       2,
     ],
     selectedAction: 1,
+    display: 'None',
   },
   mutations: {
     changeResources(state, costs) {
