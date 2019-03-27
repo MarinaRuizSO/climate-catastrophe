@@ -19,6 +19,15 @@ const performResourceChange = function (state, costs) {
   state.politicalPower += costs.politicalPower;
 };
 
+const chooseEndGame = function (state) {
+  if (state.sulfate <= 0) {
+    return 1;
+  } if (state.money <= 0) {
+    return 2;
+  }
+  return 0;
+};
+
 export default new Vuex.Store({
   state: {
     money: 500,
@@ -41,8 +50,10 @@ export default new Vuex.Store({
       state.availableActions = state.availableActions.filter(item => item !== action.id);
     },
     nextTurn(state) {
-      if (state.turnNumber >= 4) {
-        state.currentEvent = Endings[0];
+      // This is the end game scenario!
+      if (state.turnNumber >= 4 || state.money <= 0 || state.popularity <= 0) {
+        const endingIndex = chooseEndGame(state);
+        state.currentEvent = Endings[endingIndex];
         state.availableActions = [];
         return;
       }
