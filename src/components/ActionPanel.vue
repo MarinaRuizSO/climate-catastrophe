@@ -20,7 +20,7 @@ export default {
       const actions = [];
 
       // eslint-disable-next-line
-      for (const i in this.$store.state.availableActions) {
+      for (const i of this.$store.state.availableActions) {
         actions.push(this.$store.state.actionList[i]);
       }
       return actions;

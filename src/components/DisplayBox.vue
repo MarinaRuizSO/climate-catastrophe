@@ -26,7 +26,7 @@ export default {
       return this.$store.state.display;
     },
     displayInfo() {
-      return this.$store.state.displayInfo;
+      return this.$store.state.currentEvent;
     },
   },
 };

@@ -19,7 +19,7 @@ export default {
   methods: {
     implementAction() {
       if (this.canImplementAction) {
-        this.$store.commit('changeResources', this.action.cost);
+        this.$store.commit('doAction', this.action);
       }
     },
   },

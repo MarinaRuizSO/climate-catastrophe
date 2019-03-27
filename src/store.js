@@ -11,6 +11,14 @@ import StartInfo from './javascript/startInfo.js';
 // eslint-disable-next-line
 import Endings from './javascript/endings.js';
 
+
+const performResourceChange = function (state, costs) {
+  state.money += costs.money;
+  state.popularity += costs.popularity;
+  state.sulfate += costs.sulfate;
+  state.politicalPower += costs.politicalPower;
+};
+
 export default new Vuex.Store({
   state: {
     money: 500,
@@ -20,26 +28,31 @@ export default new Vuex.Store({
     turnNumber: 0,
     actionList: ActionList,
     availableActions: [
+      0,
       1,
-      2,
     ],
     selectedAction: 1,
     display: 'Info',
-    displayInfo: StartInfo[0],
+    currentEvent: StartInfo[0],
   },
   mutations: {
-    changeResources(state, costs) {
-      state.money += costs.money;
-      state.popularity += costs.popularity;
-      state.sulfate += costs.sulfate;
-      state.politicalPower += costs.politicalPower;
+    doAction(state, action) {
+      performResourceChange(state, action.cost);
+      state.availableActions = state.availableActions.filter(item => item !== action.id);
     },
     nextTurn(state) {
+      if (state.turnNumber >= 4) {
+        state.currentEvent = Endings[0];
+        state.availableActions = [];
+        return;
+      }
       state.turnNumber += 1;
-      state.availableActions = [ActionList[1]];
+      state.availableActions = [];
       state.money += 1000;
       state.politicalPower += 20;
       state.display = 'Info';
+      state.currentEvent = RandomEvents[0];
+      performResourceChange(state, state.currentEvent.costs);
     },
     changeSelectedAction(state, i) {
       state.selectedAction = i;
