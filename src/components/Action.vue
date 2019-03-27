@@ -24,6 +24,7 @@ export default {
   methods: {
     displayAction() {
       this.$store.commit('changeSelectedAction', this.id);
+      this.$store.commit('changeDisplay', 'Action');
     },
   },
 };
