@@ -1,5 +1,6 @@
 <template>
   <div class="action-display">
+    <Close></Close>
     <h1 class="header">{{this.action.name}}</h1>
     <div></div>
     <p class="information">{{this.action.information}}</p>
@@ -8,8 +9,13 @@
 </template>
 
 <script>
+import Close from './Close.vue';
+
 export default {
   name: 'ActionDisplay',
+  components: {
+    Close,
+  },
   methods: {
     implementAction() {
       if (this.canImplementAction) {

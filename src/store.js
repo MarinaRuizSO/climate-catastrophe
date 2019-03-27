@@ -4,6 +4,13 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 // eslint-disable-next-line
 import ActionList from './javascript/actionList.js';
+// eslint-disable-next-line
+import RandomEvents from './javascript/randomEvents.js';
+// eslint-disable-next-line
+import StartInfo from './javascript/startInfo.js';
+// eslint-disable-next-line
+import Endings from './javascript/endings.js';
+
 export default new Vuex.Store({
   state: {
     money: 500,
@@ -17,7 +24,8 @@ export default new Vuex.Store({
       2,
     ],
     selectedAction: 1,
-    display: 'None',
+    display: 'Info',
+    displayInfo: StartInfo[0],
   },
   mutations: {
     changeResources(state, costs) {
@@ -31,9 +39,13 @@ export default new Vuex.Store({
       state.availableActions = [ActionList[1]];
       state.money += 1000;
       state.politicalPower += 20;
+      state.display = 'Info';
     },
     changeSelectedAction(state, i) {
       state.selectedAction = i;
+    },
+    changeDisplay(state, name) {
+      state.display = name;
     },
   },
   actions: {
