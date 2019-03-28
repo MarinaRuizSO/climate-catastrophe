@@ -19,13 +19,17 @@ const performResourceChange = function (state, costs) {
   state.politicalPower += costs.politicalPower;
 };
 
-const chooseEndGame = function (state) {
-  if (state.sulfate <= 0) {
-    return 1;
+const chooseEndGame = (state) => {
+  if (state.sulfate <= 100) {
+    return 0;
   } if (state.money <= 0) {
     return 2;
+  } if (state.popularity <= 0) {
+    return 2;
+  } if (state.sulfate >= 1000000) {
+    return 1;
   }
-  return 0;
+  return 3;
 };
 
 export default new Vuex.Store({

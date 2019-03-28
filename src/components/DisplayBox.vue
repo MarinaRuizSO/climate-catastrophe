@@ -45,8 +45,7 @@ export default {
 }
 
 .china {
-  background-image: url('../assets/china.png');
+  background-image: url('../assets/china_map.png');
   height: 100%;
 }
-
 </style>

@@ -2,7 +2,7 @@
   <div>
     <Close></Close>
     <h1>{{ heading }}</h1>
-    <p>{{ information }}</p>
+    <p class="description">{{ information }}</p>
   </div>
 </template>
 
@@ -19,3 +19,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.description {
+  padding: 10px 40px;
+}
+</style>
