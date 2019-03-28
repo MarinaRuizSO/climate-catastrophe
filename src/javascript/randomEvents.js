@@ -16,7 +16,7 @@ export default [
     },
     requirement: {
       money: 0,
-      sulfate: 5000,
+      sulfate: 0,
       popularity: 0,
       politicalPower: 0,
     },
@@ -38,7 +38,7 @@ export default [
     },
     requirement: {
       money: 0,
-      sulfate: 5000,
+      sulfate: 0,
       popularity: 0,
       politicalPower: 0,
     },
@@ -62,7 +62,7 @@ export default [
     },
     requirement: {
       money: 0,
-      sulfate: 5000,
+      sulfate: 1000,
       popularity: 0,
       politicalPower: 0,
     },
@@ -81,7 +81,7 @@ export default [
     },
     requirement: {
       money: 0,
-      sulfate: 5000,
+      sulfate: 1000,
       popularity: 0,
       politicalPower: 0,
     },

@@ -1,7 +1,8 @@
 <template>
   <div class="grid">
     <action-panel></action-panel>
-    <end-turn></end-turn>
+    <Restart v-if="gameOver"></Restart>
+    <end-turn v-else></end-turn>
     <display-box></display-box>
     <info-panel></info-panel>
   </div>
@@ -12,6 +13,7 @@ import InfoPanel from './InfoPanel.vue';
 import ActionPanel from './ActionPanel.vue';
 import EndTurn from './EndTurn.vue';
 import DisplayBox from './DisplayBox.vue';
+import Restart from './Restart.vue';
 
 export default {
   name: 'Grid',
@@ -20,6 +22,12 @@ export default {
     ActionPanel,
     EndTurn,
     DisplayBox,
+    Restart,
+  },
+  computed: {
+    gameOver() {
+      return this.$store.state.gameOver;
+    },
   },
 };
 </script>

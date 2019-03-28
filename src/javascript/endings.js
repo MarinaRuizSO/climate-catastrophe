@@ -31,4 +31,20 @@ export default [
     heading: 'Dismissed from government',
     information: ' It looks like you are not very popular in the country ',
   },
+  {
+    heading: 'You did alright!',
+    information: 'Today is a sad day for your country…sulphate emissions \
+    have not seen a decrease under your mandate and they continue to be a \
+    health and environment hazard. The floods from the Southern regions and\
+     the droughts in the North are persistent in the summer monsoon months, \
+     and the number of deaths from these extreme events continue to increase.\
+      The monsoon circulation and winds are still offset by sulphate aerosols\
+       decreasing the solar radiation reaching the surface and the acid rain \
+       and brown haze events continue in highly polluted areas, giving residents\
+        respiratory problems and heavily damaging ecosystem. Luckily, this is \
+        not real life and the planet is giving you a second chance to make things\
+         better for everyone. Try again and prove everyone that you are a responsible'
+    ,
+  },
+
 ];

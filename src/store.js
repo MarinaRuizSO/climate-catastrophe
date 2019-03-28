@@ -32,13 +32,31 @@ const chooseEndGame = (state) => {
   return 3;
 };
 
+const canEventHappen = (state, index) => {
+  const requirement = state.randomEvents[index].requirement;
+  if (state.sulfate > requirement.sulfate
+      && state.popularity > requirement.popularity
+      && state.money > requirement.money) {
+    return true;
+  }
+  return false;
+};
+
+const chooseEvent = (state) => {
+  const length = state.randomEvents.length;
+  while (true) {
+    const random = Math.floor((Math.random() * length));
+    if (canEventHappen(state, random)) {
+      return random;
+    }
+  }
+};
+
 const randomActions = (actionList) => {
   const length = actionList.length;
   const actions = [];
   while (actions.length < 4) {
     const random = Math.floor((Math.random() * length));
-    console.log(random);
-    console.log(!actions.includes(random));
     if (!actions.includes(random)) {
       actions.push(random);
     }
@@ -54,13 +72,12 @@ export default new Vuex.Store({
     politicalPower: 20,
     turnNumber: 0,
     actionList: ActionList,
-    availableActions: [
-      0,
-      1,
-    ],
+    randomEvents: RandomEvents,
+    availableActions: randomActions(ActionList),
     selectedAction: 1,
     display: 'Info',
     currentEvent: StartInfo[0],
+    gameOver: false,
   },
   mutations: {
     doAction(state, action) {
@@ -74,6 +91,7 @@ export default new Vuex.Store({
         state.currentEvent = Endings[endingIndex];
         state.availableActions = [];
         state.display = 'Info';
+        state.gameOver = 'True';
         return;
       }
       state.turnNumber += 1;
@@ -81,7 +99,7 @@ export default new Vuex.Store({
       state.money += 1000;
       state.politicalPower = 20;
       state.display = 'Info';
-      state.currentEvent = RandomEvents[0];
+      state.currentEvent = this.state.randomEvents[chooseEvent(state)];
       performResourceChange(state, state.currentEvent.costs);
     },
     changeSelectedAction(state, i) {
@@ -89,6 +107,20 @@ export default new Vuex.Store({
     },
     changeDisplay(state, name) {
       state.display = name;
+    },
+    restartGame(state) {
+      state.money = 1000;
+      state.popularity = 50;
+      state.sulfate = 500;
+      state.politicalPower = 20;
+      state.turnNumber = 0;
+      state.actionList = ActionList;
+      state.randomEvents = RandomEvents;
+      state.availableActions = randomActions(ActionList);
+      state.selectedAction = 1;
+      state.display = 'Info';
+      state.currentEvent = StartInfo[0];
+      state.gameOver = false;
     },
   },
   actions: {

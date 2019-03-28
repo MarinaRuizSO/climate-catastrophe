@@ -31,9 +31,6 @@ export default {
       if (this.action.cost.money + this.$store.state.money < 0) {
         return false;
       }
-      if (this.action.cost.popularity + this.$store.state.popularity < 0) {
-        return false;
-      }
       if (this.action.cost.politicalPower + this.$store.state.politicalPower < 0) {
         return false;
       }
