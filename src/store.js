@@ -32,10 +32,24 @@ const chooseEndGame = (state) => {
   return 3;
 };
 
+const randomActions = (actionList) => {
+  const length = actionList.length;
+  const actions = [];
+  while (actions.length < 4) {
+    const random = Math.floor((Math.random() * length));
+    console.log(random);
+    console.log(!actions.includes(random));
+    if (!actions.includes(random)) {
+      actions.push(random);
+    }
+  }
+  return actions;
+};
+
 export default new Vuex.Store({
   state: {
-    money: 500,
-    popularity: 10,
+    money: 1000,
+    popularity: 50,
     sulfate: 500,
     politicalPower: 20,
     turnNumber: 0,
@@ -59,12 +73,13 @@ export default new Vuex.Store({
         const endingIndex = chooseEndGame(state);
         state.currentEvent = Endings[endingIndex];
         state.availableActions = [];
+        state.display = 'Info';
         return;
       }
       state.turnNumber += 1;
-      state.availableActions = [];
+      state.availableActions = randomActions(state.actionList);
       state.money += 1000;
-      state.politicalPower += 20;
+      state.politicalPower = 20;
       state.display = 'Info';
       state.currentEvent = RandomEvents[0];
       performResourceChange(state, state.currentEvent.costs);

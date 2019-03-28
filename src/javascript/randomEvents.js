@@ -8,5 +8,11 @@ export default [
       popularity: 0,
       politicalPower: 0,
     },
+    requirement: {
+      money: 0,
+      sulfate: 5000,
+      popularity: 0,
+      politicalPower: 0,
+    },
   },
 ];
