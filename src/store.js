@@ -20,13 +20,13 @@ const performResourceChange = function (state, costs) {
 };
 
 const chooseEndGame = (state) => {
-  if (state.sulfate <= 100) {
+  if (state.sulfate <= 1000) {
     return 0;
   } if (state.money <= 0) {
     return 2;
   } if (state.popularity <= 0) {
     return 2;
-  } if (state.sulfate >= 1000000) {
+  } if (state.sulfate >= 3000) {
     return 1;
   }
   return 3;
@@ -111,7 +111,7 @@ export default new Vuex.Store({
     restartGame(state) {
       state.money = 1000;
       state.popularity = 50;
-      state.sulfate = 500;
+      state.sulfate = 5000;
       state.politicalPower = 20;
       state.turnNumber = 0;
       state.actionList = ActionList;
