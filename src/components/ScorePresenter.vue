@@ -1,6 +1,7 @@
 <template>
   <div class="score-presenter">
-    {{this.symbol}} {{$store.state[this.resourceType]}}
+    <div class=image v-bind:class="resourceType"></div>
+    <div>{{$store.state[this.resourceType]}}</div>
   </div>
 </template>
 
@@ -10,26 +11,40 @@ export default {
   props: {
     resourceType: String,
   },
-  data() {
-    const symbols = {
-      money: '$',
-      popularity: '<3',
-      sulfate: 'SO2',
-      politicalPower: 'PP',
-    };
-    return {
-      symbol: symbols[this.resourceType],
-    };
-  },
 };
 </script>
 
 <style>
 .score-presenter {
+  width: 100px;
   font-size: 20px;
   padding: 5px 20px;
   margin: 5px 20px 10px 20px;
   border-bottom: 1px solid black;
 
+  display: flex;
+
+}
+
+.image {
+  height: 20px;
+  width: 20px;
+  background-size: 20px 20px;
+  margin-right: 20px;
+}
+.money {
+  background-image: url("../assets/money.png")
+}
+
+.popularity {
+  background-image: url("../assets/popularity.png")
+}
+
+.politicalPower {
+  background-image: url("../assets/politicalPower.png")
+}
+
+.sulfate {
+  background-image: url("../assets/sulfate.png")
 }
 </style>

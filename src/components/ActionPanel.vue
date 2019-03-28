@@ -1,8 +1,10 @@
 <template>
   <div class="action-panel">
     <h1 class="title">Actions</h1>
-    <div v-for="action in availableActions" v-bind:key="action.id">
-      <Action :name="action.name" :costs="action.cost" :id="action.id"></Action>
+    <div class="actions">
+      <div v-for="action in availableActions" v-bind:key="action.id">
+        <Action :name="action.name" :costs="action.cost" :id="action.id"></Action>
+      </div>
     </div>
   </div>
 </template>
@@ -41,8 +43,14 @@ export default {
   margin: 10px;
 }
 
-.title {
+.actions{
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
+.title {
 }
 
 </style>

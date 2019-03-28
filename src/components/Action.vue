@@ -4,10 +4,30 @@
      {{name}}
    </div>
    <div class="cost-group">
-     <span>$ {{costs.money}}</span>
-     <span>&lt;3 {{costs.popularity}}</span>
-     <span>SO2 {{costs.sulfate}}</span>
-     <span>PP {{costs.politicalPower}}</span>
+     <span class='group'>
+       <div class="image-small money"></div>
+       <div>
+         {{costs.money}}
+       </div>
+     </span>
+     <span class='group'>
+       <div class="image-small popularity"></div>
+       <div>
+         {{costs.popularity}}
+       </div>
+     </span>
+     <span class='group'>
+       <div class="image-small sulfate"></div>
+       <div>
+         {{costs.sulfate}}
+       </div>
+     </span>
+     <span class='group'>
+       <div class="image-small politicalPower"></div>
+       <div>
+         {{costs.politicalPower}}
+       </div>
+     </span>
    </div>
  </div>
 </template>
@@ -54,8 +74,20 @@ export default {
 .cost-group {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   margin-top: 10px;
-  padding: 0 10px;
+}
+
+.image-small {
+  height: 15px;
+  width: 15px;
+  background-size: 15px 15px;
+  margin-right: 3px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
 }
 </style>

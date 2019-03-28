@@ -45,6 +45,7 @@ export default {
 }
 
 .china {
+  background-color: #4da6ff;
   background-image: url('../assets/china_map.png');
   height: 100%;
 }
