@@ -68,7 +68,7 @@ export default new Vuex.Store({
   state: {
     money: 1000,
     popularity: 50,
-    sulfate: 500,
+    sulfate: 5000,
     politicalPower: 20,
     turnNumber: 0,
     actionList: ActionList,
@@ -83,6 +83,7 @@ export default new Vuex.Store({
     doAction(state, action) {
       performResourceChange(state, action.cost);
       state.availableActions = state.availableActions.filter(item => item !== action.id);
+      state.display = 'None';
     },
     nextTurn(state) {
       // This is the end game scenario!
@@ -96,7 +97,7 @@ export default new Vuex.Store({
       }
       state.turnNumber += 1;
       state.availableActions = randomActions(state.actionList);
-      state.money += 1000;
+      state.money += 200;
       state.politicalPower = 20;
       state.display = 'Info';
       state.currentEvent = this.state.randomEvents[chooseEvent(state)];
